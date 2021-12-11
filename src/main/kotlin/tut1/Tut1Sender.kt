@@ -14,7 +14,6 @@ class Tut1Sender {
     @Autowired
     private val queue: Queue? = null
 
-    @Scheduled(fixedDelay = 1000, initialDelay = 500)
     fun send() {
         val message = "Hello World!"
         queue?.let { template!!.convertAndSend(it.name, message) }
